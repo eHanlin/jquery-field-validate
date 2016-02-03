@@ -1,0 +1,20 @@
+{
+  "name": "jquery-field-validate",
+  "version": "0.0.3",
+  "authors": [
+  ],
+  "description": "This is a field validator.",
+
+  "main": "dist/jquery-field-validate.js",
+  "dependencies":{
+    "jquery": "~1.9.1"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

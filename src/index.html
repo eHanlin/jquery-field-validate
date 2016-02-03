@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+
+<h1>jquery-field-validate</h1>
+
+email:
+<input type="email" name="email" />
+<div class="message"></div>
+
+product:
+<select name="product">
+  <option value="">請選擇</option>
+  <option value="cd_pro_2">CD PRO 2</option>
+</select>
+<div class="message"></div>
+
+<script src="/libs/jquery/jquery.js"></script>
+<script src="/js/jquery-field-validate.js"></script>
+<script>
+
+var emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/,
+
+callbacks = {
+
+  success:function( value, $el ){
+
+    $el.next(".message").html( value ).css( "color", "green" );
+  },
+  error:function( value, $el ){
+
+    $el.next(".message").html( value ).css( "color", "red" );
+  }
+};
+
+$("input[type='email']").fieldValidate({
+
+  validate:function( defer, value ){
+
+    if ( emailRule.test( value ) ) defer.resolve( "success" ); else defer.reject( "email error" );
+  },
+  success:callbacks.success,
+  error:callbacks.error
+});
+
+var $product = $("[name='product']");
+
+$product.fieldValidate({
+  validate:function( defer, value ){
+    if ( value != "" ) defer.resolve( "success" ); else defer.reject( "no selected" );
+  },
+  success:callbacks.success,
+  error:callbacks.error
+});
+
+</script>
+
+</body>
+</html>
+

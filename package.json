@@ -1,0 +1,19 @@
+{
+  "name": "jquery.field.validate",
+  "version": "0.0.3",
+  "description": "This is a field validator.",
+  "main": "src/js/jquery-field-validate",
+  "author": "",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-open": "~0.2.0",
+    "express": "~3.2.2",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-connect": "~0.7.1",
+    "connect-livereload":"~0.3.2",
+    "matchdep": "~0.1.2",
+    "grunt-contrib-coffee":"~0.10.1",
+    "grunt-contrib-watch":"~0.4.0"
+  },
+  "license": "MIT"
+}
